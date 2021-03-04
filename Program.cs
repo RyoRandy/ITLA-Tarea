@@ -5,19 +5,39 @@ namespace ITLA_Tarea
 {
     class Program
     {
+        #region Programas
         static void Main(string[] args)
         {
-            PrimerArray();
+            /*PrimerArray();
             SegundoArray();
             TercerArray();
-            CuartoArray();
+            CuartoArray();*/
             //QuintoArray();
             //SextoArray();
             //SeptimoArray();
             //OctavoArray();
             //NovenoArray();
             //DecimoArray();
+            Console.WriteLine("Presiona cualquier tecla del teclado");
+            /*var key = Console.ReadKey();
+            Console.WriteLine($"{key.Key}");
+            Console.WriteLine($"{key.KeyChar}");
+            Console.WriteLine($"{key.Modifiers}");*/
+
+            /*bool a = true;
+            if(!a){
+                Console.WriteLine($"True, this is the value of a: {a}");
+            } else{
+                
+                Console.WriteLine($"False, this is the value of a: {a}");
+            }*/
+
+            Image obj = new Image();
+            obj.Add(new Image("reymer.png", 1024, 768));
+            obj.List();
         }
+        #endregion
+        
         #region PrimerArray
         static void PrimerArray(){
             double media = 0;
@@ -112,5 +132,72 @@ namespace ITLA_Tarea
             Console.WriteLine("El mayor de todos es: " + nums.Max());
         }
         #endregion
+
+        #region Poo
+        public class Image
+        {
+            #region Constructors
+            public Image()
+            {
+                this.Item = new Image[700];
+            }
+            public Image (string name, int pixelHeight, int pixelWidth)
+            {
+                this.ObjectId = Guid.NewGuid();
+                this.Name = name;
+                this.PixelHeight = pixelHeight;
+                this.PixelWidth = pixelWidth;
+                this.QuantityLimit = 0;
+                this.Size = new Random().Next(700);
+                this.Item = new Image[700];
+            }
+            #endregion
+            #region Attributes
+            public Guid ObjectId {get; private set;}
+            public string Name {get; set;}
+            public int PixelHeight {get; set;}
+            public int PixelWidth {get; set;}
+            public float Size {get; private set;}
+            public int QuantityLimit {get; private set;}
+            private Image[] Item {get; set;}
+
+            #endregion
+            #region Methods
+            private bool CapacityExcedeed()
+            {
+                if(this.QuantityLimit == 700)
+                {
+                    this.Write("You've excedeed the limit.");
+                    return true;
+                } 
+                return false;
+            }
+            private void Write(string text)
+            {
+                Console.WriteLine(text);
+            }
+            public void Add(Image file)
+            {
+                if(!this.CapacityExcedeed())
+                {
+                    for(int i = 0; i < Item.Length; i++)
+                    {
+                        this.Item[i] = file;
+                        this.QuantityLimit++;
+                    }
+                }
+            }
+            public void List()
+            {
+                for(int i = 0; i < Item.Length; i++)
+                {
+                    Write($"Item: {i}, ObjectId: {Item[i].ObjectId.ToString()}, Name: {Item[i].Name}, Size: {Item[i].Size}kB, Pixel Height: {Item[i].PixelHeight}, Pixel Width: {Item[i].PixelWidth}");
+                }
+            }
+            #endregion
+
+        }
+        #endregion
+
     }
 }
