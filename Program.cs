@@ -10,7 +10,7 @@ namespace ITLA_Tarea
             PrimerArray();
             SegundoArray();
             TercerArray();
-            //CuartoArray();
+            CuartoArray();
             //QuintoArray();
             //SextoArray();
             //SeptimoArray();
@@ -93,6 +93,23 @@ namespace ITLA_Tarea
             }
             Console.WriteLine("Fin del Programa #3 \n" + 
             "-------");
+        }
+        #endregion
+
+        #region CuartoArray
+        static void CuartoArray(){
+            int[] nums = new int[10];
+            Console.WriteLine("Ingrese los 10 Números");
+            for(int i = 0; i < nums.Length; i++){
+                nums[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Los numeros son: ");
+            for(int i = 0; i < nums.Length; i++){
+                Console.Write(nums[i] + " ");
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("Calculando...");
+            Console.WriteLine("El mayor de todos es: " + nums.Max());
         }
         #endregion
     }
