@@ -12,12 +12,15 @@ namespace ITLA_Tarea
             //SegundoArray();
             //TercerArray();
             //CuartoArray();
-            QuintoArray();
+            //QuintoArray();
             //SextoArray();
             //SeptimoArray();
             //OctavoArray();
             //NovenoArray();
             //DecimoArray();
+            Persona persona1 = new Persona;
+            persona1.imprimir();
+            persona1.EsMayorEdad();
         }
         #endregion
         
@@ -134,5 +137,47 @@ namespace ITLA_Tarea
             }
         }
         #endregion
+    
+        #region SextoArray
+        #endregion
+
+        #region SeptimoArray
+        static void SeptimoArray(){
+            Console.WriteLine("Bienvenido, por favor ingrese su nombre.");
+            string nombre = Console.ReadLine();
+            for(int i = 0; i < nombre.Length; i++){
+                Console.Write(nombre[i] + " ");
+            }
+        }
+        #endregion
+    
+        #region OctavoArray
+        #endregion
+
+        #region NovenoArray
+        #endregion
+
+        #region DecimoArray
+        private string nombre;
+        private int edad;
+
+        public void Persona() {
+            Console.WriteLine("Ingrese su nombre");
+            nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese su edad");
+            edad = Convert.ToInt32(Console.ReadLine());
+        }
+        public void Datos(){
+            Console.WriteLine($"Nombre: {nombre}, Edad:{edad}");
+        }
+        public void EsMayorEdad(){
+            if (edad >= 18){
+                Console.WriteLine($"{nombre}: Es Mayor de edad");
+            }
+            else{
+                Console.WriteLine($"{nombre}: No es Mayor de edad");
+            }
+        } 
+        #endregion    
     }
 }
