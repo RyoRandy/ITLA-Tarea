@@ -18,9 +18,10 @@ namespace ITLA_Tarea
             //OctavoArray();
             //NovenoArray();
             //DecimoArray();
-            Persona persona1 = new Persona;
-            persona1.imprimir();
-            persona1.EsMayorEdad();
+            
+            //Persona persona1 = new Persona;
+            //persona1.imprimir();
+            //persona1.EsMayorEdad();
         }
         #endregion
         
