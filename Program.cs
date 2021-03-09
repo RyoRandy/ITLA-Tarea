@@ -18,7 +18,7 @@ namespace ITLA_Tarea
             //OctavoArray();
             //NovenoArray();
             //DecimoArray();
-            Participacion();
+            //Participacion();
             
             //Persona persona1 = new Persona;
             //persona1.imprimir();
@@ -183,7 +183,7 @@ namespace ITLA_Tarea
         #endregion 
 
         #region Participacion
-        static void Participacion(){
+        /*static void Participacion(){
             //Crear un programa que simule un banco que tiene 3 clientes que pueden hacer depósitos y retiros. También el banco requiere que al final del día calcule la cantidad de dinero que hay depositado.
 
             int[] numCuenta;
@@ -300,7 +300,7 @@ namespace ITLA_Tarea
                     Console.WriteLine("Error.");
                 }
             }
-        }
+        } */
         #endregion   
     }
 }
